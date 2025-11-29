@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Find a Doctor</h2>
+<form method="post">
+<input name="city" placeholder="Enter your city" required>
+<button>Search</button>
+</form>
+
+{% if doctors %}
+<h3>Available Doctors:</h3>
+<ul>
+{% for d,s in doctors %}
+<li>{{ d }} — {{ s }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

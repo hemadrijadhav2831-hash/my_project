@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Result</h2>
+
+<p><strong>Your Input:</strong> {{ input_text }}</p>
+<p><strong>Diagnosis:</strong> {{ data.disease }}</p>
+<p><strong>Advice:</strong> {{ data.prescription }}</p>
+
+{% if data.serious %}
+<p class="alert">⚠ Serious condition — doctor advised.</p>
+{% else %}
+<p class="safe">😊 Not serious.</p>
+{% endif %}
+
+<br>
+<a href="/" class="back">Back</a>
+{% endblock %}

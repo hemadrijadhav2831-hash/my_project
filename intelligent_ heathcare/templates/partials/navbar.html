@@ -1,0 +1,19 @@
+<nav class="nav">
+  <a href="/">Home</a> |
+  <a href="/chatbot">Chatbot</a> |
+  <a href="/voice">Voice</a> |
+  <a href="/doctor_finder">Doctor Finder</a> |
+
+  {% if session.username %}
+    <a href="/history">History</a> |
+    <a href="/logout">Logout ({{session.username}})</a>
+  {% else %}
+    <a href="/login">Login</a> |
+    <a href="/register">Register</a>
+  {% endif %}
+
+  {% if session.username == 'admin' %}
+    | <a href="/admin">Admin</a>
+  {% endif %}
+</nav>
+<hr>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Total users: {{ users }}</p>
+<p>Total reports: {{ reports }}</p>
+
+<h3>Common Diagnoses:</h3>
+<ul>
+{% for t in top %}
+<li>{{ t['diagnosis'] }} — {{ t['c'] }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

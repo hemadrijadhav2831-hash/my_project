@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Report History</h2>
+{% if reports %}
+<ul>
+{% for r in reports %}
+  <li>
+    <strong>{{ r['diagnosis'] }}</strong> — {{ r['created_at'] }}  
+    <br>
+    {{ r['symptoms'] }}
+  </li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No reports found.</p>
+{% endif %}
+{% endblock %}

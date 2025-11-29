@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Chatbot</h2>
+
+<div class="chatbox">
+{% for who,msg in history %}
+  <p><strong>{{who}}:</strong> {{msg}}</p>
+{% endfor %}
+</div>
+
+<form method="post">
+<input name="q" placeholder="Say how you feel..." required>
+<button type="submit">Send</button>
+</form>
+
+{% endblock %}
